@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
+  before_action :redirect_to_registration
+
+  private
+
+  def redirect_to_registration
+    redirect_to register_path if request.path == root_path
+  end
 end

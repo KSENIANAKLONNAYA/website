@@ -1,0 +1,9 @@
+<!-- app/views/posts/index.html.erb -->
+<h1>Список постов</h1>
+<% @posts.each do |post| %>
+  <div>
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+  </div>
+<% end %>
+

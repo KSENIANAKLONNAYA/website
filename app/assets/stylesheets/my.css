@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* Светлый голубой фон */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Оформление заголовка "Регистрация" */
+h1 {
+    color: #00796b; /* Темно-зеленый цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    font-size: 38px; /* Размер шрифта */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тень для текста */
+    margin-bottom: 40px; /* Отступ снизу */
+}
+
+/* Добавление стилей для формы (пример) */
+form {
+    background-color: #ffffff; /* Белый фон для формы */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для формы */
+    padding: 20px; /* Внутренние отступы */
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: auto; /* Центрирование формы на странице */
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%; /* Ширина полей ввода */
+    padding: 10px; /* Внутренние отступы */
+    margin: 10px 0; /* Отступы между полями */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 4px; /* Закругленные углы */
+}
+
+button {
+    background-color: #00796b; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без рамки */
+    padding: 10px 15px; /* Внутренние отступы кнопки */
+    border-radius: 4px; /* Закругленные углы кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    font-size: 16px; /* Размер шрифта кнопки */
+}
+
+button:hover {
+    background-color: #0041; /* Более темный цвет при наведении */
+}

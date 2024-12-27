@@ -15,7 +15,7 @@ Install dependencies:
 bundle install
 npm install
 ```
-Run the frontend dev duild:
+Run the frontend dev build:
 ```
 foreman start -f Procfile.dev
 ```

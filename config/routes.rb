@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'registrations#new' # замените на ваш корневой маршрут
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Маршруты для регистрации
+  get 'register', to: 'registrations#new'
+  post 'register', to: 'registrations#create'
+  get 'registration_success', to: 'registrations#success', as: 'registration_success'
+
+  # Ресурсные маршруты для пользователей
+  resources :users, only: [:new, :create]
+
+  # Ресурсные маршруты для постов
+  resources :posts
+
+  # Проверка состояния приложения
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
+  # Другие маршруты (например, для PWA)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # get "service-worker" => "rails/pwa#service_worker"
 end
