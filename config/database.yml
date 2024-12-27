@@ -1,0 +1,37 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: website_development
+  username: <%= ENV["WEBSITE_DEV_DATABASE_PASSWORD_USERNAME"] %>
+  password: <%= ENV["WEBSITE_DEV_DATABASE_PASSWORD"] %>
+
+test:
+  <<: *default
+  database: website_test
+  username: <%= ENV["WEBSITE_DEV_DATABASE_PASSWORD_USERNAME"] %>
+  password: <%= ENV["WEBSITE_DEV_DATABASE_PASSWORD"] %>
+
+
+
+production:
+  primary: &primary_production
+    <<: *default
+    database: website_production
+    username: website
+    password: <%= ENV["WEBSITE_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_production
+    database: website_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: website_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: website_production_cable
+    migrations_paths: db/cable_migrate
